@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Table from './components/Table.js';
 
-function App() {
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      users: []
+    }
+  }
+
+  componentDidMount() {
+    fetch('https://reqres.in/api/users?page=2')
+    .then(res => res.json())
+    .then(json => json.data)
+    .then(users => this.setState({ 'users' : users }))
+  }
+
+  render() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Table users={this.state.users }/>
     </div>
   );
+ }
 }
 
 export default App;
