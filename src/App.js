@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Table from './components/Table.js';
+// import Table from './components/Table.js';
 import List from './components/List.js';
 
 
@@ -22,23 +22,24 @@ class App extends Component { //witihin the react model we're importing componen
       }
     })
     .then(res => res.json())
-    .then(json => json.data)
-    .then(data => this.setState({ 'posts' : data }))
-    // console.log(data)
+    .then(json => json.posts)
+    .then(posts => this.setState({ 'posts' : posts }))
+
     console.log('--------')
-    console.log(this.state.posts)
+    setTimeout( () => { console.log(this.state.posts)}, 3000)
   }
 
   render() {
-  return (
-    // <div id="tabledata" className="App">
-    //   <Table users={this.state.users }/>
-    // </div>
-    <div id='post-list' className='App'>
-      <List posts={this.state.posts }/>
-    </div>
-  );
- }
+    console.log(this.state.posts)
+    return (
+      // <div id="tabledata" className="App">
+      //   <Table users={this.state.users }/>
+      // </div>
+      <div id='post-list' className='App'>
+        <List posts={ this.state.posts }/>
+      </div>
+    );
+  }
 }
 
 export default App;

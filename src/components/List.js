@@ -5,23 +5,25 @@ const List = ({ posts }) => {
     <ul>
     { (posts.length > 0) ? posts.map( (post, index) => {
       return (
-        <li>
+        <li key={ post.id }>
           <table>
-            <tr>
-              <td class='user-name'> { post.user.email } </td>
-              <td class='create-time'> { post.created_at } </td>
-              <td class='empty-cell'></td>
-              <td class='more-cell'><div class='more-div'><div class='hidden-menu'></div></div></td>
-            </tr>
-            <tr>
-              <td class='body-cell' colspan='4'> { post.message } </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
+            <tbody>
+              <tr>
+                <td className='user-name'> { post.user.email } </td>
+                <td className='create-time'> { post.created_at } </td>
+                <td className='empty-cell'></td>
+                <td className='more-cell'><div className='more-div'><div className='hidden-menu'></div></div></td>
+              </tr>
+              <tr>
+                <td className='body-cell' colSpan='4'> { post.message } </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
           </table>
         </li>
       )
