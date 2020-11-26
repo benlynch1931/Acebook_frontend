@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 // import Table from './components/Table.js';
 import List from './components/List.js';
+import './Interface.js'
 
 
 class App extends Component { //witihin the react model we're importing component
   constructor(props) {
     super(props);  //relates to running the constructor in Component
     this.state = {
-      // users: []
+      user: 2,
       posts: []
     }
   }
@@ -25,21 +26,40 @@ class App extends Component { //witihin the react model we're importing componen
     .then(json => json.posts)
     .then(posts => this.setState({ 'posts' : posts }))
 
-    console.log('--------')
-    setTimeout( () => { console.log(this.state.posts)}, 3000)
   }
 
   render() {
-    console.log(this.state.posts)
     return (
       // <div id="tabledata" className="App">
       //   <Table users={this.state.users }/>
       // </div>
-      <div id='post-list' className='App'>
-        <List posts={ this.state.posts }/>
+      <div>
+        <div className='page-header'>Acebook</div>
+
+        <div id='post-list' className='App'>
+          <List state={ this.state } />
+        </div>
+
+        <div className='page-footer'>By Quioxtic</div>
       </div>
     );
   }
+
+  // hideDropDown() { window.addEventListener('click', () => {
+  //   if (!event.target.matches('.dropbtn')) {
+  //     var dropdowns = document.getElementsByClassName("dropdown-content");
+  //     var i;
+  //     for (i = 0; i < dropdowns.length; i++) {
+  //       var openDropdown = dropdowns[i];
+  //       if (openDropdown.classList.contains('show')) {
+  //         openDropdown.classList.remove('show');
+  //       }
+  //     }
+  //   }
+  // })}
+
+
+
 }
 
 export default App;

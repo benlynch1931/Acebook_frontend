@@ -1,5 +1,39 @@
-.App {
+body {
+  background-color: #E8FCFC;
+}
+
+.page-header {
+  width: 100%;
+  height: 80px;
+  padding-top: 11.5px;
+
+  position: sticky;
+
+  box-shadow: 0 0 8px #A3A3A3;
+  background-color: #FFB0EB;
+
   text-align: center;
+  font-size: 50px;
+
+}
+
+.page-footer {
+  width: 100%;
+  height: 16px;
+
+  margin: 0;
+
+  position: absolute;
+  bottom: 0px;
+
+  background-color: #FFB0EB;
+
+  text-align: center;
+  font-size: 14px;
+}
+
+.App {
+
 }
 
 .App-logo {
@@ -35,4 +69,153 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+.post-table {
+
+  width: 600px;
+  border-collapse: collapse;
+
+}
+
+table, tr, td {
+  /* border: 1px solid #000000; */
+}
+
+table {
+  /* border: 1px solid #000000; */
+}
+
+.post-div {
+
+  width: 600px;
+  margin-bottom: 20px;
+  margin-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+
+  border-radius: 5px;
+
+  background-color: #FFFFFF;
+  /* box-shadow: 0 0 4px #EBEBEB; */
+  /* box-shadow: 0 0 6px #DEDEDE; */
+  box-shadow: 0 0 6px #C7C7C7;
+}
+
+.list-post {
+  width: 630px;
+  margin-left: -315px;
+  margin-top: 50px;
+  padding-top: 15px;
+  padding-bottom: 5px;
+
+  position: absolute;
+  left: 50%;
+
+  /* background-color: #FFFFFF; */
+  /* border: solid #000000; */
+}
+
+.header {
+
+  height: 23px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.user-date {
+  min-width: 95%;
+  padding-left: 8px;
+}
+
+
+.create-date {
+  width: 30%;
+}
+
+.empty-cell {
+  min-width: 25%;
+  width: 50%;
+}
+
+
+
+.body-cell {
+  padding-left: 12px;
+  font-size: 20px;
+}
+
+.more-cell {
+  width: 5%;
+  margin: 0;
+  padding: 0px;
+  padding-right: 2px;
+}
+
+.more-div {
+  width:100%;
+  height: 100%;
+  margin: -2px 0px;
+  padding-bottom: 2px;
+
+  border-radius: 5px;
+
+  position: relative;
+  display: inline-block;
+
+  vertical-align: text-top;
+  text-align: center;
+}
+
+.more-btn {
+
+  width: 100%;
+  padding-left: 1px;
+  margin-bottom: 3px;
+  font-size: 16px;
+
+  border: none;
+  cursor: pointer;
+}
+
+.more-div:hover, .more-div:focus {
+  border-radius: 5px;
+
+  /* background-color: #FAFAFA; */
+  cursor: pointer;
+}
+
+.drop-down-menu {
+
+  width: 20px;
+  display: none;
+  position: absolute;
+  /* background-color: #f1f1f1; */
+  background-color: #CCE8E8;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  /* border: solid #000000; */
+  z-index: 1;
+}
+
+.drop-down-menu a {
+  width:100%;
+  height: 10px;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+
+  display:block;
 }
