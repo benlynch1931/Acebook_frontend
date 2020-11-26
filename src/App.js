@@ -10,24 +10,39 @@ import Table from './components/Table.js';
 import TableApp from './components/TableApp.js';
 import AboutUs from './components/About.js';
 import Posts from './components/Posts.js';
+import Login from "./components/login.component";
+import SignUp from "./components/signup.component";
 
 export default function App() {
   return (
     <Router>
       <div>
-      <h1>Welcome to Acebook</h1>
-        <nav>
-            <div><Link to="/signup">Sign Up</Link>
-                <br /> <Link to="/Login">Log In</Link>
-                <br /> <Link to="/Aboutus">About Us</Link>
-                <br /> <Link to="/Posts">Posts</Link></div>
-        </nav>
+      <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+        <div className="container">
+          <Link className="navbar-brand" to={"/sign-in"}>Acebook</Link>
+          <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item">
+                <Link className="nav-link" to={"/sign-in"}>Login</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to={"/sign-up"}>Sign up</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/signup">
-            <TableApp />
+          <Route exact path='/'>
+          </Route>
+          <Route path="/sign-up">
+            <SignUp />
+          </Route>
+          <Route path="/login">
+            <Login/>
           </Route>
           <Route path="/Aboutus">
             <AboutUs />
