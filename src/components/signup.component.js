@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { useState } from 'react';
+import '../style.css'
 
 export default class SignUp extends Component {
   constructor(props) {

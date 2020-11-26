@@ -5,7 +5,7 @@ class Posts extends Component {
   constructor(props) {
   super(props);  //relates to running the constructor in Component
   this.state = {
-    user: 2,
+    user: 1,
     posts: []
   }
 }
