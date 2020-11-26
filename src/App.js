@@ -1,28 +1,41 @@
-import React, { Component } from 'react';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 import Table from './components/Table.js';
+import TableApp from './components/TableApp.js';
+import AboutUs from './components/About.js';
+import Posts from './components/Posts.js';
 
-class App extends Component { //witihin the react model we're importing component
-  constructor(props) {
-    super(props);  //relates to running the constructor in Component
-    this.state = {
-      users: []
-    }
-  }
-
-  componentDidMount() {
-    fetch('https://reqres.in/api/users?page=2')
-    .then(res => res.json())
-    .then(json => json.data)
-    .then(data => this.setState({ 'users' : data }))
-  }
-
-  render() { 
+export default function App() {
   return (
-    <div id="tabledata" className="App">
-      <Table users={this.state.users }/>
-    </div>
-  );
- }
-}
+    <Router>
+      <div>
+      <h1>Welcome to Acebook</h1>
+        <nav>
+            <div><Link to="/signup">Sign Up</Link>
+                <br /> <Link to="/Login">Log In</Link>
+                <br /> <Link to="/Aboutus">About Us</Link>
+                <br /> <Link to="/Posts">Posts</Link></div>
+        </nav>
 
-export default App;
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/signup">
+            <TableApp />
+          </Route>
+          <Route path="/Aboutus">
+            <AboutUs />
+          </Route>
+          <Route path="/Posts">
+            <Posts />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+)};
