@@ -12,8 +12,8 @@ class Posts extends Component {
 
 componentDidMount() {
   // fetch('https://reqres.in/api/users?page=2')
-  // fetch('https://acebook-quixotic-production.herokuapp.com/api/v1/posts/', {
-  fetch('http://localhost:6030/api/v1/posts', {
+  fetch('https://acebook-quixotic-production.herokuapp.com/api/v1/posts/', {
+  // fetch('http://localhost:6030/api/v1/posts', {
     method: 'GET',
     headers: {
       'Authorization': 'Basic ' + btoa('test@example.com:1234'),

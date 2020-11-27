@@ -13,6 +13,7 @@ import AboutUs from './components/About.js';
 import Posts from './components/Posts.js';
 import Login from "./components/login.component";
 import SignUp from "./components/signup.component";
+import ForgotPassword from "./components/forgotPassword.component";
 
 export default function App() {
   return (
@@ -24,13 +25,16 @@ export default function App() {
           <table className='nav-table'>
             <tbody>
               <tr>
-                <td colSpan='3'>
-                  <Link className="navbar-brand" to={"/sign-in"}>Acebook</Link>
+                <td colSpan='4'>
+                  <Link className="navbar-brand" to={"/"}>Acebook</Link>
                 </td>
               </tr>
 
                   <tr className="navbar-nav ml-auto">
                     <td className='empty-cell'></td>
+                    <td className='nav-item'>
+                      <Link className="nav-link" to={"/posts"}>Posts</Link>
+                    </td>
                     <td className="nav-item">
                       <Link className="nav-link" to={"/login"}>Login</Link>
                     </td>
@@ -52,14 +56,17 @@ export default function App() {
           <Route path="/sign-up">
             <SignUp />
           </Route>
-          <Route path="/login">
+          <Route exact path="/login">
             <Login/>
           </Route>
           <Route path="/Aboutus">
             <AboutUs />
           </Route>
-          <Route path="/Posts">
+          <Route path="/posts">
             <Posts />
+          </Route>
+          <Route path="/login/forgot-password">
+            <ForgotPassword />
           </Route>
         </Switch>
       </div>
